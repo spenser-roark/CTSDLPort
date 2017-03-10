@@ -18,7 +18,6 @@ For right now all I want to do is make Crono's house. Possibly more to follow af
 
 ## Cutscene
   * Mother waking crono up
-
 ## Text
   * Mother waking crono up
   * Lucca convo in the kitchen - if we decide to do more than just Crono's room
@@ -42,3 +41,7 @@ For right now all I want to do is make Crono's house. Possibly more to follow af
       * this doesn't need to work right now
     * config
       * Include screen size in that among other things
+
+...
+
+So much more to come holy crap
