@@ -1,0 +1,64 @@
+\hypertarget{DestroySdlObjects_8h}{}\section{include/utilities/\+Destroy\+Sdl\+Objects.h File Reference}
+\label{DestroySdlObjects_8h}\index{include/utilities/\+Destroy\+Sdl\+Objects.\+h@{include/utilities/\+Destroy\+Sdl\+Objects.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\void \hyperlink{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}{cleanup} (T $\ast$t, Args \&\&... args)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{DestroySdlObjects_8h_a2d423ddd29c567f43265da33ffb81a57}{cleanup$<$ S\+D\+L\+\_\+\+Window $>$} (S\+D\+L\+\_\+\+Window $\ast$win)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{DestroySdlObjects_8h_afb81f4ea71ca069d90582d8ffc61810c}{cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$} (S\+D\+L\+\_\+\+Renderer $\ast$ren)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{DestroySdlObjects_8h_a578a2648d458ee0996c7643729593d4a}{cleanup$<$ S\+D\+L\+\_\+\+Texture $>$} (S\+D\+L\+\_\+\+Texture $\ast$tex)
+\item 
+{\footnotesize template$<$$>$ }\\void \hyperlink{DestroySdlObjects_8h_a17871ebe941a61dad37537bb52b025e3}{cleanup$<$ S\+D\+L\+\_\+\+Surface $>$} (S\+D\+L\+\_\+\+Surface $\ast$surf)
+\item 
+void \hyperlink{DestroySdlObjects_8h_a27a1864e1f4693766ae2596e6e205731}{hello} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}\label{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Args$>$ \\
+void cleanup (\begin{DoxyParamCaption}\item[{T $\ast$}]{t,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{DestroySdlObjects_8h_afb81f4ea71ca069d90582d8ffc61810c}\label{DestroySdlObjects_8h_afb81f4ea71ca069d90582d8ffc61810c}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$@{cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$}}
+\index{cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$@{cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{cleanup$<$ S\+D\+L\+\_\+\+Renderer $>$()}{cleanup< SDL\_Renderer >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}{cleanup}$<$ S\+D\+L\+\_\+\+Renderer $>$ (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{DestroySdlObjects_8h_a17871ebe941a61dad37537bb52b025e3}\label{DestroySdlObjects_8h_a17871ebe941a61dad37537bb52b025e3}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!cleanup$<$ S\+D\+L\+\_\+\+Surface $>$@{cleanup$<$ S\+D\+L\+\_\+\+Surface $>$}}
+\index{cleanup$<$ S\+D\+L\+\_\+\+Surface $>$@{cleanup$<$ S\+D\+L\+\_\+\+Surface $>$}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{cleanup$<$ S\+D\+L\+\_\+\+Surface $>$()}{cleanup< SDL\_Surface >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}{cleanup}$<$ S\+D\+L\+\_\+\+Surface $>$ (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{surf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{DestroySdlObjects_8h_a578a2648d458ee0996c7643729593d4a}\label{DestroySdlObjects_8h_a578a2648d458ee0996c7643729593d4a}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!cleanup$<$ S\+D\+L\+\_\+\+Texture $>$@{cleanup$<$ S\+D\+L\+\_\+\+Texture $>$}}
+\index{cleanup$<$ S\+D\+L\+\_\+\+Texture $>$@{cleanup$<$ S\+D\+L\+\_\+\+Texture $>$}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{cleanup$<$ S\+D\+L\+\_\+\+Texture $>$()}{cleanup< SDL\_Texture >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}{cleanup}$<$ S\+D\+L\+\_\+\+Texture $>$ (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Texture $\ast$}]{tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{DestroySdlObjects_8h_a2d423ddd29c567f43265da33ffb81a57}\label{DestroySdlObjects_8h_a2d423ddd29c567f43265da33ffb81a57}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!cleanup$<$ S\+D\+L\+\_\+\+Window $>$@{cleanup$<$ S\+D\+L\+\_\+\+Window $>$}}
+\index{cleanup$<$ S\+D\+L\+\_\+\+Window $>$@{cleanup$<$ S\+D\+L\+\_\+\+Window $>$}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{cleanup$<$ S\+D\+L\+\_\+\+Window $>$()}{cleanup< SDL\_Window >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \hyperlink{DestroySdlObjects_8h_afb2acd7f16768ed991df743b1dd5198b}{cleanup}$<$ S\+D\+L\+\_\+\+Window $>$ (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Window $\ast$}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{DestroySdlObjects_8h_a27a1864e1f4693766ae2596e6e205731}\label{DestroySdlObjects_8h_a27a1864e1f4693766ae2596e6e205731}} 
+\index{Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}!hello@{hello}}
+\index{hello@{hello}!Destroy\+Sdl\+Objects.\+h@{Destroy\+Sdl\+Objects.\+h}}
+\subsubsection{\texorpdfstring{hello()}{hello()}}
+{\footnotesize\ttfamily void hello (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

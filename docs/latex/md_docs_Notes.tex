@@ -1,0 +1,20 @@
+
+\begin{DoxyItemize}
+\item if the image is smaller than the camera then it doesn\textquotesingle{}t move
+\end{DoxyItemize}
+
+\section*{class \hyperlink{classBackground}{Background} needs to include the width and height of the viewable bg}
+
+
+\begin{DoxyItemize}
+\item Is this a good solution?
+\begin{DoxyItemize}
+\item use the overlay/collision grid for each bg instead have a set w/h for it and if the camera hits the edge of that it should stop
+\item Gonna need to have positions for that anyway might as well use it\textquotesingle{}s edges for the map collision
+\end{DoxyItemize}
+\item This is necessary for determining whether the camera is larger than the image?
+\item Necessary if the bg changes in some way
+\begin{DoxyItemize}
+\item E.\+g. Crono\textquotesingle{}s house when his mom opens window 
+\end{DoxyItemize}
+\end{DoxyItemize}
