@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(Character)
 
 include_directories(${CMAKE_SOURCE_DIR}/Character/include)
+include_directories(${CMAKE_SOURCE_DIR}/Character/include/external)
 include_directories(${CMAKE_SOURCE_DIR}/Character/resources)
 
 add_library(Sprite src/Sprite.cpp)

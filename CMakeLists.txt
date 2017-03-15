@@ -22,7 +22,7 @@ include_directories(include/classes)
 
 # Move to separate folder maybe ... + /external with only PlayableCharacerList in there that may do it
 # Just want to abstract that since we don't need to see that functionality
-include_directories(${CMAKE_SOURCE_DIR}/Character/include)
+include_directories(${CMAKE_SOURCE_DIR}/Character/include/external)
 
 add_subdirectory(src)
 add_subdirectory(Character)
