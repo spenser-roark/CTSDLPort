@@ -13,9 +13,6 @@ using namespace std;
 #include "PlayableCharacterList.h"
 
 int main() {
-	cout << "Hello World!\n";
-	PlayableCharacterList PlayableCharacters;
-	cout << "Hello my name is " << PlayableCharacters.Crono.getName() << endl;
 	int imgFlags = IMG_INIT_PNG;	
 	int initted = IMG_Init(imgFlags);
 	VariableConstants constants;
@@ -42,28 +39,50 @@ int main() {
 		return 1;
 	}
 
+	// ADD CONSTRUCTOR HERE, WE NEED TO PASS IN WIN AND REN
+	PlayableCharacterList PlayableCharacters(win, ren);
+	cout << "Hello World! \n"
+		 << "My name is " << PlayableCharacters.Crono.getName() << endl;
+
+
 	// Make an errorhandler that opens an error window?
 	Background cronosHouse("CronosHouse.png", ren, win);
 
 	SDL_Event e;
 	bool quit = false;
-	SDL_Rect foo;
-	foo.w = constants.getCameraWidth();
-	foo.h = constants.getCameraHeight();
-	foo.x = 10;
-	foo.y = 35;
 
-	while (!quit) {
+	// Temp variable
+	SDL_Rect tempBackgroundRect;
+
+	tempBackgroundRect.w = constants.getCameraWidth();
+	tempBackgroundRect.h = constants.getCameraHeight();
+	tempBackgroundRect.x = 10;
+	tempBackgroundRect.y = 35;
+
+	SDL_Rect* chronoLeft = PlayableCharacters.Crono.getSprite().stand().down(0);
+
+/*	cout << "Instantiate test \nw " << chronoLeft.w << endl
+		<< "h "<< chronoLeft.h << endl
+		<< "x "<< chronoLeft.x << endl
+		<< "y "<< chronoLeft.y << endl;
+*/	 while (!quit) {
 		while (SDL_PollEvent(&e)) {
+			SDL_RenderClear(ren);
 			if (e.type == SDL_QUIT) {
 				quit = true;
 			} else if (e.type == SDL_KEYDOWN) {
 				switch(e.key.keysym.sym) {
 					case SDLK_1:
-						foo.x = 10;
+						tempBackgroundRect.x = 10;
 						break;
 					case SDLK_2:
-						foo.x = 17 + constants.getCameraWidth();
+						tempBackgroundRect.x = 17 + constants.getCameraWidth();
+						break;
+					case SDLK_3:
+						// chronoLeft = PlayableCharacters.Crono.getSprite().stand().down(0);
+						break;
+					case SDLK_4:
+						// chronoLeft = PlayableCharacters.Crono.getSprite().stand().left(0);
 						break;
 					case SDLK_ESCAPE:
 						quit = true;
@@ -71,8 +90,12 @@ int main() {
 				}
 			}
 		}
-			SDL_RenderClear(ren);
-			SDL_RenderCopy(ren, cronosHouse.getBGTexture(), &foo, NULL);
+			SDL_RenderCopy(ren, cronosHouse.getBGTexture(), &tempBackgroundRect, NULL);
+			
+			SDL_RenderCopy(ren, PlayableCharacters.Crono.getSprite().getSpriteSheet(), PlayableCharacters.Crono.getSprite().stand().down(0), PlayableCharacters.Crono.getSprite().getSpriteRect());
+
+			// SDL_Wait(1000);
+			// SDL_RenderCopy(ren, PlayableCharacters.Crono.getSprite().getSpriteSheet(), PlayableCharacters.Crono.getSprite().stand().down(0), PlayableCharacters.Crono.getSprite().getSpriteRect());
 			// SDL_RenderTexture(cronosHouse.getBGTexture(), ren, screen_width, screen_height, NULL);
 
 			// renderTexture(ren, windowX, windowY, &clips[useClip]);

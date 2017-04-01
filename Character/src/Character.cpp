@@ -9,3 +9,7 @@ void Character::setName(std::string newName) {
 std::string Character::getName() {
 	return name;
 }
+
+Sprite Character::getSprite() {
+	return sprite;
+}
