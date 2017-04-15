@@ -12,25 +12,29 @@ private:
 	std::vector<SDL_Rect*> Right;
 	std::vector<SDL_Rect*> Up;
 	std::vector<SDL_Rect*> Down;
-	SDL_Rect* checkDirection(std::vector<SDL_Rect*> direction, int index);
+	SDL_Rect* checkDirection(std::vector<SDL_Rect*> direction, int index) const;
 
 public:
-	SDL_Rect* left(int index);
-	SDL_Rect* right(int index);
-	SDL_Rect* up(int index);
-	SDL_Rect* down(int index);
-	void setLeft(SDL_Rect* newLeft);
-	void setLeft(std::vector<SDL_Rect*> newLeft);
-	void setRight(SDL_Rect newRight);
-	void setRight(std::vector<SDL_Rect> newRight);
-	void setUp(SDL_Rect newUp);
-	void setUp(std::vector<SDL_Rect> newUp);
-	void setDown(SDL_Rect* newDown);
-	void setDown(std::vector<SDL_Rect*> newDown);
-
 	Direction();
 	Direction( const Direction &dctn );
 	~Direction();
+	
+	SDL_Rect* left(int index) const;
+	SDL_Rect* right(int index) const;
+	SDL_Rect* up(int index) const;
+	SDL_Rect* down(int index) const;
+
+	void setLeft(SDL_Rect* newLeft);
+	void setLeft(std::vector<SDL_Rect*> newLeft);
+
+	void setRight(SDL_Rect* newRight);
+	void setRight(std::vector<SDL_Rect> newRight);
+
+	void setUp(SDL_Rect* newUp);
+	void setUp(std::vector<SDL_Rect> newUp);
+
+	void setDown(SDL_Rect* newDown);
+	void setDown(std::vector<SDL_Rect*> newDown);
 };
 
 #endif

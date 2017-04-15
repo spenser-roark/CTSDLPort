@@ -10,7 +10,8 @@ using namespace std;
 // #include "constants.h"
 #include "Background.h"
 #include "utilities.h"
-#include "PlayableCharacterList.h"
+#include "PlayableCharacter.h"
+#include "setup.h"
 
 int main() {
 	int imgFlags = IMG_INIT_PNG;	
@@ -40,10 +41,11 @@ int main() {
 	}
 
 	// ADD CONSTRUCTOR HERE, WE NEED TO PASS IN WIN AND REN
-	PlayableCharacterList PlayableCharacters(win, ren);
-	cout << "Hello World! \n"
-		 << "My name is " << PlayableCharacters.Crono.getName() << endl;
+	// setupCharacters(win, ren);
 
+/*	cout << "Hello World! \n"
+		 << "My name is " << Crono.getName() << endl;
+*/
 
 	// Make an errorhandler that opens an error window?
 	Background cronosHouse("CronosHouse.png", ren, win);
@@ -59,13 +61,13 @@ int main() {
 	tempBackgroundRect.x = 10;
 	tempBackgroundRect.y = 35;
 
-	SDL_Rect* chronoLeft = PlayableCharacters.Crono.getSprite().stand().down(0);
+ 	PlayableCharacter Crono(win, ren, "Crono2.gif");
+ 	Crono.setName("Crono");
 
-/*	cout << "Instantiate test \nw " << chronoLeft.w << endl
-		<< "h "<< chronoLeft.h << endl
-		<< "x "<< chronoLeft.x << endl
-		<< "y "<< chronoLeft.y << endl;
-*/	 while (!quit) {
+ 	// setupPlayableCharacter(Crono);
+
+ 	SDL_Rect currentCharacterSprite = *Crono.getSprite().stand().down(0);
+	 while (!quit) {
 		while (SDL_PollEvent(&e)) {
 			SDL_RenderClear(ren);
 			if (e.type == SDL_QUIT) {
@@ -78,11 +80,17 @@ int main() {
 					case SDLK_2:
 						tempBackgroundRect.x = 17 + constants.getCameraWidth();
 						break;
-					case SDLK_3:
-						// chronoLeft = PlayableCharacters.Crono.getSprite().stand().down(0);
+					case SDLK_LEFT:
+						currentCharacterSprite = *Crono.getSprite().stand().left(0);
 						break;
-					case SDLK_4:
-						// chronoLeft = PlayableCharacters.Crono.getSprite().stand().left(0);
+					case SDLK_RIGHT:
+						currentCharacterSprite = *Crono.getSprite().stand().right(0);
+						break;
+					case SDLK_UP:
+						currentCharacterSprite = *Crono.getSprite().stand().up(0);
+						break;
+					case SDLK_DOWN:
+						currentCharacterSprite = *Crono.getSprite().stand().down(0);
 						break;
 					case SDLK_ESCAPE:
 						quit = true;
@@ -92,10 +100,10 @@ int main() {
 		}
 			SDL_RenderCopy(ren, cronosHouse.getBGTexture(), &tempBackgroundRect, NULL);
 			
-			SDL_RenderCopy(ren, PlayableCharacters.Crono.getSprite().getSpriteSheet(), PlayableCharacters.Crono.getSprite().stand().down(0), PlayableCharacters.Crono.getSprite().getSpriteRect());
+			SDL_RenderCopy(ren, Crono.getSprite().getSpriteSheet(), &currentCharacterSprite, Crono.getSprite().getSpriteRect());
 
 			// SDL_Wait(1000);
-			// SDL_RenderCopy(ren, PlayableCharacters.Crono.getSprite().getSpriteSheet(), PlayableCharacters.Crono.getSprite().stand().down(0), PlayableCharacters.Crono.getSprite().getSpriteRect());
+			// SDL_RenderCopy(ren, Crono.getSprite().getSpriteSheet(), Crono.getSprite().stand().down(0), Crono.getSprite().getSpriteRect());
 			// SDL_RenderTexture(cronosHouse.getBGTexture(), ren, screen_width, screen_height, NULL);
 
 			// renderTexture(ren, windowX, windowY, &clips[useClip]);

@@ -22,7 +22,7 @@ include_directories(include/classes)
 
 # Move to separate folder maybe ... + /external with only PlayableCharacerList in there that may do it
 # Just want to abstract that since we don't need to see that functionality
-include_directories(${CMAKE_SOURCE_DIR}/Character/include/external)
+include_directories(${CMAKE_SOURCE_DIR}/Character/include)
 
 add_subdirectory(src)
 add_subdirectory(Character)
@@ -32,6 +32,7 @@ set(INCLUDE_LIBS ${INCLUDE_LIBS} SDL2_image)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} error_handlers)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} Background)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} PlayableCharacterList)
+set(INCLUDE_LIBS ${INCLUDE_LIBS} Setup)
 
 add_executable(chronoTrigger main.cpp)
 

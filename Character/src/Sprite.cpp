@@ -25,7 +25,7 @@ Sprite::Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName) {
 	spriteRect->y = 320;
 
 	// We're assuming all the sprite sheets are set up similarly so walk/stand should be the same across all boards
-	std::vector<SDL_Rect> standDefaults;
+	// std::vector<SDL_Rect> standDefaults;
 	
 	/**
 	* Standing
@@ -38,11 +38,37 @@ Sprite::Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName) {
 	standRect->x = 110;
 	standRect->y = 0;
 	Stand.setDown(standRect);
-	delete [] standRect;
-	// left?
-/*	standRect->x = 150;
+	// left
+	standRect->x = 150;
 	standRect->y = 0;
-	Stand.setLeft(standRect);*/
+
+	Stand.setLeft(standRect);
+
+	// Up
+	standRect->x = 190;
+	standRect->y = 0;
+
+	Stand.setUp(standRect);
+
+	// Up
+	standRect->x = 230;
+	standRect->y = 0;
+
+	Stand.setRight(standRect);
+
+	delete [] standRect;
+}
+
+Sprite::Sprite( const Sprite &sprite )
+	: Walk(sprite.Walk), Stand(sprite.Stand), resourceDirectory(sprite.resourceDirectory), spriteSheet(sprite.spriteSheet), ren(sprite.ren), win(sprite.win) {
+	std::cout << "Sprite copy constructor Stand down h = " << sprite.Stand.down(0)->h << std::endl;
+	spriteRect = new SDL_Rect;
+	*spriteRect = *sprite.spriteRect;
+	// delete [] spriteRect;
+}
+
+Sprite::~Sprite() {
+	delete [] spriteRect;
 }
 
 bool Sprite::setSpriteSheet(std::string fileName) {
@@ -67,11 +93,33 @@ bool Sprite::setSpriteSheet(std::string fileName) {
 	}
 }
 
-Sprite::Sprite( const Sprite &sprite ) 
-	: Walk(sprite.Walk), Stand(sprite.Stand), resourceDirectory(sprite.resourceDirectory), spriteSheet(sprite.spriteSheet), ren(sprite.ren), win(sprite.win) {
-	
-	spriteRect = new SDL_Rect;
-	*spriteRect = *sprite.spriteRect;
+void Sprite::setStand(SDL_Rect newLeft, SDL_Rect newRight, SDL_Rect newUp, SDL_Rect newDown) {
+	SDL_Rect* standLeft = new SDL_Rect;
+	*standLeft = newLeft;
+	Stand.setLeft(standLeft);
+
+	SDL_Rect* standRight = new SDL_Rect;
+	*standRight = newRight;
+	Stand.setRight(standRight);
+
+	SDL_Rect* standUp = new SDL_Rect;
+	*standUp = newUp;
+	Stand.setUp(standUp);
+
+	SDL_Rect* standDown = new SDL_Rect;
+	*standDown = newDown;
+	std::cout << "setstand standDown h = " << standDown->h << std::endl;
+	Stand.setDown(standDown);
+	std::cout << "setstand Stand.down(0) h = " << Stand.down(0)->h << std::endl;
+
+	delete [] standLeft;
+	delete [] standRight;
+	delete [] standUp;
+	delete [] standDown;
+}
+
+Direction Sprite::getStand() {
+	return Stand;
 }
 
 SDL_Texture* Sprite::getSpriteSheet() {
@@ -90,8 +138,4 @@ Direction Sprite::walk() {
 
 Direction Sprite::stand() {
 	return Stand;
-}
-
-Sprite::~Sprite() {
-	delete [] spriteRect;
 }

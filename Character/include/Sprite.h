@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+#include <vector>
 
 #include "Direction.h"
 
@@ -28,16 +29,16 @@ private:
 public:
 	Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName);
 	Sprite( const Sprite &sprite );
-	SDL_Rect* move_left(int index);
-	void move_right();
-	void move_up();
-	void move_down();
-	bool setSpriteSheet(std::string fileName);
+	~Sprite();
+
 	SDL_Texture* getSpriteSheet();
 	SDL_Rect* getSpriteRect();
 	Direction walk();
 	Direction stand();
-	~Sprite();
+
+	bool setSpriteSheet(std::string fileName);
+	void setStand(SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect); //left, right, up, down
+	Direction getStand();
 };
 
 #endif
