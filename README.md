@@ -10,6 +10,7 @@ For right now all I want to do is make Crono's house. Possibly more to follow af
 
 ## Sprites
   * Furniture in Crono's room
+    * Deprecated? Idea, the furniture is part of the background so this will be dealt with with collission sheets
   * Backgrounds
     * Are these included in the background or separate objects?
   * Cat - must have since it's there when crono wakes up

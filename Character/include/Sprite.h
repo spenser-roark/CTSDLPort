@@ -38,6 +38,10 @@ public:
 
 	bool setSpriteSheet(std::string fileName);
 	void setStand(SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect); //left, right, up, down
+	void setStandUp(SDL_Rect);
+	void setStandDown(SDL_Rect);
+	void setStandLeft(SDL_Rect);
+	void setStandRight(SDL_Rect);
 	Direction getStand();
 };
 
