@@ -5,6 +5,7 @@
 
 /**
 * This class contains the background/image data.
+* TODO: Break this out into it's own class /Background
 * E.g. Chrono's house, Leene square, etc.
 */
 class Background: public VariableConstants {

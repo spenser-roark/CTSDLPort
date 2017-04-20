@@ -12,12 +12,8 @@
 
 class Sprite {
 private:
-	// just 2, I don't remember why I made the third one but there was a good reason I think
-	std::map<int, int> position;
 	// We have 6 walking left animations, let's store them both here
 	// Most movement variables will probably be the same
-	SDL_Rect* spriteRect;
-
 	Direction Walk;
 	Direction Stand;
 
@@ -25,23 +21,33 @@ private:
 	SDL_Renderer* ren;
 	SDL_Texture* spriteSheet;
 	std::string resourceDirectory;
-	
+	void moveCharacter();
+
 public:
 	Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName);
 	Sprite( const Sprite &sprite );
 	~Sprite();
 
-	SDL_Texture* getSpriteSheet();
+	SDL_Texture* sheet();
 	SDL_Rect* getSpriteRect();
 	Direction walk();
 	Direction stand();
 
 	bool setSpriteSheet(std::string fileName);
+
+	void setSpriteRect(int, int);
+
 	void setStand(SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect); //left, right, up, down
 	void setStandUp(SDL_Rect);
 	void setStandDown(SDL_Rect);
 	void setStandLeft(SDL_Rect);
 	void setStandRight(SDL_Rect);
+
+	void setWalkUp(std::vector<SDL_Rect>);
+	void setWalkDown(std::vector<SDL_Rect>);
+	void setWalkLeft(std::vector<SDL_Rect>);
+	void setWalkRight(std::vector<SDL_Rect>);
+
 	Direction getStand();
 };
 

@@ -11,6 +11,9 @@ add_library(VariableConstants constants/VariableConstants.cpp)
 # Classes
 add_library(Background classes/Background.cpp)
 
+#structs
+add_library(DisplayPlayableCharacter structs/DisplayPlayableCharacter.cpp)
+
 set(GLOBAL_INCLUDE_LIBS ${GLOBAL_INCLUDE_LIBS} SDL2)
 set(GLOBAL_INCLUDE_LIBS ${GLOBAL_INCLUDE_LIBS} SDL2_image)
 
@@ -30,5 +33,6 @@ set_target_properties(VariableConstants PROPERTIES COMPILE_FLAGS ${CPP_FLAGS})
 set_target_properties(Setup PROPERTIES COMPILE_FLAGS ${CPP_FLAGS})
 
 target_link_libraries(Background ${BACKGROUND_INCLUDE_LIBS})
+target_link_libraries(DisplayPlayableCharacter ${GLOBAL_INCLUDE_LIBS})
 target_link_libraries(VariableConstants ${VARIABLECONSTANTS_INCLUDE_LIBS})
 target_link_libraries(Setup ${SETUP_INCLUDE_LIBS})

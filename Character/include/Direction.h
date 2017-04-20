@@ -25,7 +25,7 @@ public:
 	SDL_Rect* down(int index) const;
 
 	void setLeft(SDL_Rect* newLeft);
-	void setLeft(std::vector<SDL_Rect*> newLeft);
+	void setLeft(std::vector<SDL_Rect> newLeft);
 
 	void setRight(SDL_Rect* newRight);
 	void setRight(std::vector<SDL_Rect> newRight);
@@ -34,7 +34,7 @@ public:
 	void setUp(std::vector<SDL_Rect> newUp);
 
 	void setDown(SDL_Rect* newDown);
-	void setDown(std::vector<SDL_Rect*> newDown);
+	void setDown(std::vector<SDL_Rect> newDown);
 };
 
 #endif

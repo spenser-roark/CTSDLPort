@@ -2,7 +2,14 @@
 #include "Direction.h"
 
 #include <iostream>
+using std::cout;
+using std::endl;
+
+#include <map>
+using std::map;
+
 #include <vector>
+using std::vector;
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -14,28 +21,14 @@ Sprite::Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName) {
 	win = newWin;
 	ren = newRen;
 	setSpriteSheet(fileName);
-
-	spriteRect = new SDL_Rect;
-
-	// Change this to be based on screen size
-	// This can stay here though, most sprites will be the same size and we can just overload it as the exception
-	spriteRect->w = 150;
-	spriteRect->h = 175;
-	spriteRect->x = 400;
-	spriteRect->y = 320;
-
 }
 
 Sprite::Sprite( const Sprite &sprite )
 	: Walk(sprite.Walk), Stand(sprite.Stand), resourceDirectory(sprite.resourceDirectory), spriteSheet(sprite.spriteSheet), ren(sprite.ren), win(sprite.win) {
-	// std::cout << "Sprite copy constructor Stand down h = " << sprite.Stand.down(0)->h << std::endl;
-	spriteRect = new SDL_Rect;
-	*spriteRect = *sprite.spriteRect;
-	// delete [] spriteRect;
 }
 
 Sprite::~Sprite() {
-	delete [] spriteRect;
+	// delete [] spriteRect;
 }
 
 bool Sprite::setSpriteSheet(std::string fileName) {
@@ -51,6 +44,7 @@ bool Sprite::setSpriteSheet(std::string fileName) {
 
 		return true;
 	} catch (int e) {
+		// TODO:
 		// Convert this to generic error message function later
 		
 		std::cerr << "Error: Could not load sprite: " << SDL_GetError() << std::endl;
@@ -76,9 +70,6 @@ void Sprite::setStand(SDL_Rect newLeft, SDL_Rect newRight, SDL_Rect newUp, SDL_R
 	SDL_Rect* standDown = new SDL_Rect;
 	*standDown = newDown;
 	Stand.setDown(standDown);
-
-	// std::cout << "setstand standDown h = " << standDown->h << std::endl;
-	// std::cout << "setstand Stand.down(0) h = " << Stand.down(0)->h << std::endl;
 
 	delete [] standLeft;
 	delete [] standRight;
@@ -110,18 +101,30 @@ void Sprite::setStandRight(SDL_Rect newRight) {
 	Stand.setRight(standRight);
 }
 
+void Sprite::setWalkUp(vector<SDL_Rect> newUp) {
+	Walk.setUp(newUp);
+}
+
+void Sprite::setWalkDown(vector<SDL_Rect> newDown) {
+
+	Walk.setDown(newDown);
+}
+
+void Sprite::setWalkRight(vector<SDL_Rect> newRight) {
+	Walk.setRight(newRight);
+}
+
+void Sprite::setWalkLeft(vector<SDL_Rect> newLeft) {
+	Walk.setLeft(newLeft);
+
+}
+
 Direction Sprite::getStand() {
 	return Stand;
 }
 
-SDL_Texture* Sprite::getSpriteSheet() {
-	// Deprecated, we'll be using move_left... etc. to return a map of the texture and the rect, but this for now
+SDL_Texture* Sprite::sheet() {
 	return spriteSheet;
-}
-
-SDL_Rect* Sprite::getSpriteRect() {
-	// Deprecated, we'll be using move_left... etc. to return a map of the texture and the rect, but this for now
-	return spriteRect;
 }
 
 Direction Sprite::walk() {
