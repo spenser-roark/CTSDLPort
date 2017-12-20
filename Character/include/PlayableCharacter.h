@@ -16,6 +16,7 @@ private:
 public:
 	PlayableCharacter(SDL_Window* win, SDL_Renderer* ren, std::string fileName);
 	void setPortrait(std::string fileName);
+	unsigned int getLevel() { return level; };
 };
 
 #endif

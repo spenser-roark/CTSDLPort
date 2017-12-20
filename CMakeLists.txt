@@ -20,6 +20,7 @@ include_directories(include/utilities)
 include_directories(include/constants)
 include_directories(include/classes)
 include_directories(include/structs)
+include_directories(include/run)
 
 # Move to separate folder maybe ... + /external with only PlayableCharacerList in there that may do it
 # Just want to abstract that since we don't need to see that functionality
@@ -35,6 +36,7 @@ set(INCLUDE_LIBS ${INCLUDE_LIBS} Background)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} PlayableCharacterList)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} Setup)
 set(INCLUDE_LIBS ${INCLUDE_LIBS} DisplayPlayableCharacter)
+set(INCLUDE_LIBS ${INCLUDE_LIBS} Run)
 
 add_executable(chronoTrigger main.cpp)
 

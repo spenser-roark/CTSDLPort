@@ -13,7 +13,7 @@ PlayableCharacter::PlayableCharacter(SDL_Window* win, SDL_Renderer* ren, std::st
 	/**
 	* Standing
 	*/
-
+	level = 1;
 	// down
 	SDL_Rect* standRect = new SDL_Rect;
 	standRect->w = 40;

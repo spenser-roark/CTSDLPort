@@ -15,6 +15,7 @@ DisplayPlayableCharacter::DisplayPlayableCharacter(SDL_Window* win, SDL_Renderer
 
 	position = new SDL_Rect;
 	
+	// This is the character position on the screen
 	position->w = 150;
 	position->h = 175;
 	position->x = 400; // 400
