@@ -18,8 +18,8 @@ DisplayPlayableCharacter::DisplayPlayableCharacter(SDL_Window* win, SDL_Renderer
 	// This is the character position on the screen
 	position->w = 150;
 	position->h = 175;
-	position->x = 400; // 400
-	position->y = 320; // 320
+	position->x = 400;
+	position->y = 320;
 }
 
 void DisplayPlayableCharacter::move(int x, int y) {
