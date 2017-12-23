@@ -1,15 +1,15 @@
 # installation
 ## Dependencies
-   1. cmake
-   2. csdl / csdl2
-     * I used libsdl2-dev to get the dependencies for ubuntu then...
-     * you may need to build this from source as the dev package from ubuntu has issues with sdl2_image
-   3. SDL2_image
-   4. libsdl2-mixer-2.0-0
-   5. libsdl2-image-2.0-0
-   6. any image libraries you want
-     * libjpeg-dev
-     * libpng-dev
+1. cmake
+2. csdl / csdl2
+	* I used libsdl2-dev to get the dependencies for ubuntu then...
+	* you may need to build this from source as the dev package from ubuntu has issues with sdl2_image
+3. SDL2_image
+4. libsdl2-mixer-2.0-0
+5. libsdl2-image-2.0-0
+6. any image libraries you want
+	* libjpeg-dev
+	* libpng-dev
 	* I had to compile this from source in ubuntu 16.04 lts
      
 ## Commands
@@ -19,7 +19,7 @@
    
    1. create a build directory if one doesn't already exist
    2. run cmake from the build directory with the project root as an argument
-     * e.g. cmake ../
+   * e.g. cmake ../
    3. run make
    4. Profit!
 
