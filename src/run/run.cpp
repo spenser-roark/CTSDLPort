@@ -18,7 +18,7 @@ using namespace std;
 *
 * Returns: void
 */
-void moveCharacter(DisplayPlayableCharacter& displayCharacter, const Uint8 state []) {
+void moveCharacter(DisplayPlayableCharacter& displayCharacter, SDL_Rect& currentCharacterSprite, const Uint8 state [], int& i) {
 
 	// cout << displayCharacter.character.getName() << "'s level is " << displayCharacter.character.getLevel() << endl;
 

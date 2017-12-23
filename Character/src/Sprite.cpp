@@ -17,7 +17,7 @@ using std::vector;
 Sprite::Sprite(SDL_Window* newWin, SDL_Renderer* newRen, std::string fileName) {
 	// TODO: DO NOT HARD CODE THIS. CHANGE IT AS SOON AS POSSIBLE! THIS IS TERRIBLE!
 	// I need to test it though so we're good for now
-	resourceDirectory = "/home/ubuntu/Programs/chronoTrigger/Character/resources/";
+	resourceDirectory = "/home/ubuntu/programs/chronotrigger/Character/resources/";
 	win = newWin;
 	ren = newRen;
 	setSpriteSheet(fileName);

@@ -84,7 +84,7 @@ int main() {
 				quit = true;
 			} else if (e.type == SDL_KEYDOWN) {
 
-				moveCharacter(Crono, state);
+				moveCharacter(Crono, currentCharacterSprite, state, i);
 				
 
 				switch(e.key.keysym.sym) {
